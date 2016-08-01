@@ -15,7 +15,10 @@ int gradeAlgo()
 	system("clear");
 	for (int i = 1; i <= MAP_NUM; i++)
 	{
-		printf("%d번째 미로 이동횟수 : %d\n", i, result[i]);
+		if(i==1)printf("%dst Move Count : %d\n", i, result[i]);
+		else if(i==2)printf("%dnd Move Count : %d\n", i, result[i]);
+		else if(i==3)printf("%drd Move Count : %d\n", i, result[i]);
+		else printf("%dth Move Count : %d\n", i, result[i]);
 	}
 	return sum;
 }
