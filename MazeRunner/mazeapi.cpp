@@ -9,7 +9,7 @@ void loadMapData(int mapNum)
 	char mapname[20]; sprintf(mapname, "maps/map%d.txt", mapNum);
 	FILE * f = fopen(mapname, "r");
 	int a, b; fscanf(f, "%d %d", &a, &b); 
-	row = a, col = b; posx = posy = 1; cnt = 0;
+	row = a, col = b; posx = posy = 1; cnt = 0; clear = 0;
 	mode = 0;
 	map = (int**)malloc(sizeof(int*) * a);
 	for (int i = 0; i < a; i++)
@@ -61,6 +61,7 @@ void winGame()
 	{
 		printf("Total Move Count : %d\nClear!                 \n", cnt);
 	}
+	clear = 1;
 	//exit(1);
 }
 
@@ -69,3 +70,5 @@ void winGame()
 int getCount() {
 	return cnt;
 }
+
+int getSuccess() { return clear; }
