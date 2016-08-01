@@ -16,4 +16,7 @@ def gradeScore(code):
 	time.sleep(0.1)
 	subprocess.call(["g++",foldername+'/main.cpp','-o',foldername+'/program'])
 	time.sleep(0.1)
-	return subprocess.check_output(foldername+'/program',shell=True)
+	res = subprocess.check_output(foldername+'/program',shell=True)
+	if res.find('1st Move') != -1:
+		res = res[res.find('1st Move'):]
+	return res
