@@ -9,7 +9,9 @@ def gradeScore(code):
 	foldername = str(time.time())
 	subprocess.call(["cp","MazeRunner",foldername,'-r'])
 	f = open(foldername+'/myMazeAlgo.cpp', 'w')
-	f.write(code)
+	code = code.split('\r\n')
+	for i in code:
+		f.write(i+'\n')
 	f.close()
 	time.sleep(0.1)
 	subprocess.call(["g++",foldername+'/main.cpp','-o',foldername+'/program'])
