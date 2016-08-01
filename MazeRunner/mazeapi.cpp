@@ -6,7 +6,7 @@ int nearMap[3][3];
 
 void loadMapData(int mapNum)
 {
-	char mapname[20]; sprintf(mapname, "map%d.txt", mapNum);
+	char mapname[20]; sprintf(mapname, "maps/map%d.txt", mapNum);
 	FILE * f = fopen(mapname, "r");
 	int a, b; fscanf(f, "%d %d", &a, &b); 
 	row = a, col = b; posx = posy = 1; cnt = 0;
