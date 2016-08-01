@@ -66,7 +66,7 @@ def notecalc():
 
 
 @app.route('/gradecalc',methods = ['POST'])
-def notecalc():
+def gradecalc():
 	print request
 	if request.method != 'POST':
 		return 'Access Denied'
