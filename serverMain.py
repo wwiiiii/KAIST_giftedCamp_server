@@ -5,7 +5,7 @@ from urlparse import urlparse
 from PIL import Image
 import sys, time, io, os
 import urllib
-import i2sMain
+import i2sMain, gradeScore
 
 reload(sys)
 
@@ -40,6 +40,10 @@ def notescan():
 	print 'asdf'
 	return render_template('notescan.html')
 
+@app.route('/grade')
+def notescan():
+	return render_template('grade.html')
+
 @app.route('/notecalc',methods = ['POST'])
 def notecalc():
 	print 'note'
@@ -59,6 +63,19 @@ def notecalc():
 	time.sleep(2)
 	myimgpath = 'http://52.78.66.95:12345/showimg/';
 	print res; return render_template('noteshow.html', resultstr=res.split('\n'), imgpath = myimgpath+imgname+'.jpeg');
+
+
+@app.route('/gradecalc',methods = ['POST'])
+def notecalc():
+	print request
+	if request.method != 'POST':
+		return 'Access Denied'
+	print request.form
+	code= request.form['code'];
+	foldername = str(time.time())
+	return str(gradeScore.gradeScore(code))
+
+
 
 @app.route('/showimg/<filename>')
 def showimg(filename):

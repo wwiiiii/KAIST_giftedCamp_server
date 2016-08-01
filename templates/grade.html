@@ -1,0 +1,10 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+<div class="jumbo">
+    <form method="post" action="/gradecalc">
+        <h3><strong>myMazeAlgo.c 파일을 복사해서 붙여넣으세요</strong></h3>
+        <input type="text" name="code" placeholder="코드 내용">
+        <button type="submit">전송!</button>
+    </form>
+</div>
+{% endblock %}
