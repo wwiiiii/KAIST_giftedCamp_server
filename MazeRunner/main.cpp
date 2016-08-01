@@ -3,5 +3,5 @@
 int main()
 {
 	int res = gradeAlgo(); //system("cls");
-	printf("total count : %d\n", res);
+	printf("ÃÑ ÀÌµ¿È½¼ö : %d\n", res);
 }

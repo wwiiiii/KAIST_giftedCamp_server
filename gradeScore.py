@@ -6,7 +6,7 @@ sys.setdefaultencoding('utf-8')
 import subprocess
 
 def gradeScore(code):
-	foldername = str(time.time())
+	foldername = 'folders/' + str(time.time())
 	subprocess.call(["cp","MazeRunner",foldername,'-r'])
 	f = open(foldername+'/myMazeAlgo.cpp', 'w')
 	code = code.split('\r\n')

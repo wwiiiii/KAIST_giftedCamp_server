@@ -15,7 +15,7 @@ int gradeAlgo()
 	system("clear");
 	for (int i = 1; i <= MAP_NUM; i++)
 	{
-		printf("%dth result : %d\n", i, result[i]);
+		printf("%d번째 미로 이동횟수 : %d\n", i, result[i]);
 	}
 	return sum;
 }
