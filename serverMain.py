@@ -41,7 +41,7 @@ def notescan():
 	return render_template('notescan.html')
 
 @app.route('/grade')
-def notescan():
+def grade():
 	return render_template('grade.html')
 
 @app.route('/notecalc',methods = ['POST'])
