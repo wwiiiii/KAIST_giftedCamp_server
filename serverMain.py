@@ -44,10 +44,12 @@ def gradecalc():
 	print request
 	if request.method != 'POST':
 		return 'Access Denied'
-	print request.form
+	#print request.form
 	code= request.form['code'];
 	foldername = str(time.time())
-	return str(gradeScore.gradeScore(code))
+	res = str(gradeScore.gradeScore(code))
+	print res
+	return res
 
 if __name__ == "__main__":
 	if len(sys.argv) == 1:
