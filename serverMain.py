@@ -47,8 +47,8 @@ def gradecalc():
 	#print request.form
 	code= request.form['code'];
 	foldername = str(time.time())
-	res = str(gradeScore.gradeScore(code))
-	print res
+	res = str(gradeScore.gradeScore(code)).replace('\n','<br>')
+	res = res[7:]
 	return res
 
 if __name__ == "__main__":
