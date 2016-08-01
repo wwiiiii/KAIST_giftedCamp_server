@@ -19,11 +19,11 @@ def uri_validator(x):
 	except:
 		return False
 
-UPLOAD_FOLDER ='C:\Users\q\Documents\Visual Studio 2015\Projects\PythonApplication1\PythonApplication1\upload'
+UPLOAD_FOLDER ='/home/ubuntu/KAIST_giftedCamp_server/upload'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 
-app = Flask(__name__)
+app = Flask(__name__)#, template_folder = '/templates')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
   
 @app.route('/')
