@@ -18,5 +18,5 @@ def gradeScore(code):
 	time.sleep(0.1)
 	res = subprocess.check_output(foldername+'/program',shell=True)
 	if res.find('1st Move') != -1:
-		res = res[res.find('1st Move'):]
+		res = res[res.find('1st Move') - 7:]
 	return res
