@@ -1,17 +1,20 @@
 #include "grader.h"
 #define INF 1987654321
-int gradeAlgo(char * mapname)
+int gradeAlgo(char * mapname, char *resname)
 {
 	setModeNoShow();
-	loadMapData(mapname);
+	loadMapData(mapname, resname);
 	myFunction();
 	if (getSuccess() == 0) {
-		printf("Failed\n");
+		FILE * fp = fopen(resf, "w");
+		fprintf(fp, "Failed\n");
+		fp.close();
 	}
 	else {
-		printf("Error\n");
+		FILE * fp = fopen(resf, "w");
+		fprintf(fp, "Error\n");
+		fp.close();
 	}
-	fflush(stdout); fflush(NULL);
 	exit(0);
 }
 

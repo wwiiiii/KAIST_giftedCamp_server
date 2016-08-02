@@ -4,9 +4,9 @@
 
 int nearMap[3][3];
 
-void loadMapData(char* mapname)
+void loadMapData(char* mapname, char*resname)
 {
-	FILE * f = fopen(mapname, "r");
+	FILE * f = fopen(mapname, "r"); resf = resname;
 	int a, b; fscanf(f, "%d %d", &a, &b); 
 	row = a, col = b; posx = posy = 1; cnt = 0; clear = 0;
 	mode = 0;
@@ -56,13 +56,10 @@ void setModeNoShow() { mode = 0; }
 
 void winGame()
 {
-	if (mode == 1)
-	{
-		printf("Total Move Count : %d\nClear!                 \n", cnt);
-	}
 	clear = 1;
-	printf("Clear : %d\n", cnt);
-	fflush(stdout); fflush(NULL);
+	FILE * fp = fopen(resf, "w");
+	fprintf(fp,"Clear : %d\n", cnt);
+	fp.close();
 	exit(0);
 }
 

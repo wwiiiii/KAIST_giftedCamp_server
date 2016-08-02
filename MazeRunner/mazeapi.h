@@ -11,10 +11,11 @@
 #define BLACK 8*16+8
 #define WHITE 7*16+7
 #define GREEN 2*16+7
-void loadMapData(char*);
+void loadMapData(char*, char*);
 void deleteMap();
 void winGame();
 
+static char* resf;
 static int** map;
 extern int nearMap[3][3];
 static int row, col, mode = 1;//mode 0 : show only result, mode 1 : show GUI
