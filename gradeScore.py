@@ -20,14 +20,19 @@ def gradeScore(code):
 	time.sleep(0.1)
 	res = ""
 	for i in range(1,MAP_NUM+1):
-		subprocess.call([foldername+'/program',mapPath+str(i)+'.txt',foldername+'/result'+str(i)])
-		nowres = open(foldername+'/result'+str(i)).readlines(); nowres=  str(nowres)
-		if nowres.find('Clear') != -1:
-			nowres = nowres[res.find('Clear'):]
-		elif nowres.find('Fail') != -1:
-			nowres = nowres[res.find('Fail'):]
-		elif nowres.find('Error') != -1:
-			nowres = nowres[res.find('Error'):]
-		res += nowres + '\n'
+		subprocess.call([foldername+'/program' , mapPath+str(i)+'.txt' , foldername+'/result'+str(i)])
+		time.sleep(0.05)
+		if os.path.exists(foldername+'/result'+str(i)):
+			nowres = open(foldername+'/result'+str(i)).readlines(); nowres=  str(nowres)
+			if nowres.find('Clear') != -1:
+				nowres = nowres[res.find('Clear'):]
+			elif nowres.find('Fail') != -1:
+				nowres = nowres[res.find('Fail'):]
+			elif nowres.find('Error') != -1:
+				nowres = nowres[res.find('Error'):]
+			res += ('%dth ' % i) + nowres + '\n'
+		else:
+			nowres = ''
+			res += '%dth Failed\n' % i
 		print nowres
 	return res
