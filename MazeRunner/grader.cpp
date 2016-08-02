@@ -8,12 +8,12 @@ int gradeAlgo(char * mapname, char *resname)
 	if (getSuccess() == 0) {
 		FILE * fp = fopen(resf, "w");
 		fprintf(fp, "Failed\n");
-		fp.close();
+		fclose(fp);
 	}
 	else {
 		FILE * fp = fopen(resf, "w");
 		fprintf(fp, "Error\n");
-		fp.close();
+		fclose(fp);
 	}
 	exit(0);
 }
