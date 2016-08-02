@@ -20,7 +20,9 @@ def gradeScore(code):
 	time.sleep(0.1)
 	res = ""
 	for i in range(1,MAP_NUM+1):
-		nowres = subprocess.check_output(foldername+'/program '+'/home/ubuntu/KAIST_giftedCamp_server/maps/map'+str(i)+'.txt',shell=True)
+		nowres = subprocess.check_output(foldername+'/program '+
+								   '/home/ubuntu/KAIST_giftedCamp_server/maps/map'+str(i)+'.txt '+
+								   foldername+'result'+str(i),shell=True)
 		if nowres.find('Clear') != -1:
 			nowres = nowres[res.find('Clear'):]
 		elif nowres.find('Fail') != -1:
