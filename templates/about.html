@@ -1,8 +1,13 @@
 ﻿{% extends "layout.html" %}
   
 {% block content %}
-  <h2>getSuccess()</h2>
-  <h4>목적지에 도착했으면 1, 도착하지 못했으면 0을 반환합니다.</h4>
-  <h4>while 루프등을 사용할 경우 각 단계마다 이 함수를 호출해서 도착했으면 함수를 종료해주세요!</h4>
-  <h4>ex : while(1){move(RIGHT); if(getSuccess()==1) return;}</h4>
+    <h2>move(DIRECTION)</h2>
+    <h4>현재 위치에서 주어진 값대로 한 칸 이동합니다.</h4>
+    <h4>move(RIGHT); move(LEFT); move(UP); move(DOWN);처럼 쓰면 됩니다.</h4>
+    <h4>주위 미로의 상태를 보고 프로그램이 판단해서 호출하는 식으로 씁시다.</h4>
+    <br /><br /><br />
+    <h2>getSuccess()</h2>
+    <h4>목적지에 도착했으면 1, 도착하지 못했으면 0을 반환합니다.</h4>
+    <h4>while 루프등을 사용할 경우 각 단계마다 이 함수를 호출해서 도착했으면 함수를 종료해주세요!</h4>
+    <h4>while(1)<br>{ <br>    move(RIGHT);<br>    if( getSuccess()==1 )<br>        return; <br>}</h4>
 {% endblock %}
