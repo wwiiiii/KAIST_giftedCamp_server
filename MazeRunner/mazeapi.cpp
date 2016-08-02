@@ -4,7 +4,7 @@
 
 int nearMap[3][3];
 
-void loadMapData(char mapname)
+void loadMapData(char* mapname)
 {
 	FILE * f = fopen(mapname, "r");
 	int a, b; fscanf(f, "%d %d", &a, &b); 

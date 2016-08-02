@@ -57,7 +57,4 @@ if __name__ == "__main__":
 	else:
 		myport = int(sys.argv[1])
 	print 'asdf'
-	app.run(host='0.0.0.0', port=myport)
-	
-	
-	
+	app.run(host='0.0.0.0', port=myport, processes = 10)
