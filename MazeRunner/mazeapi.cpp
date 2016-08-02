@@ -62,7 +62,7 @@ void winGame()
 	}
 	clear = 1;
 	printf("Clear : %d\n", cnt);
-	fflush(stdout);
+	fflush(stdout); fflush(NULL);
 	exit(0);
 }
 
