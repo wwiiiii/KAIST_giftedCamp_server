@@ -24,16 +24,16 @@ def gradeScore(code):
 		time.sleep(0.05)
 		if os.path.exists(foldername+'/result'+str(i)):
 			nowres = open(foldername+'/result'+str(i), 'r').readlines();
-			print nowres; nowres=  str(nowres)
+			nowres=  str(nowres[0])
 			if nowres.find('Clear') != -1:
 				nowres = nowres[res.find('Clear'):]
 			elif nowres.find('Fail') != -1:
 				nowres = nowres[res.find('Fail'):]
 			elif nowres.find('Error') != -1:
 				nowres = nowres[res.find('Error'):]
-			res += ('%dth ' % i) + nowres + '\n'
+			res += str(i)+'th ' + nowres + '\n'
 		else:
-			nowres = ''
-			res += '%dth Failed\n' % i
+			nowres = str(i)+'th Failed\n'
+			res += str(i)+'th Failed\n'
 		print nowres
 	return res
