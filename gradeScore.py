@@ -5,6 +5,8 @@ sys.setdefaultencoding('utf-8')
 
 import subprocess
 
+MAP_NUM = 2
+
 def gradeScore(code):
 	foldername = 'folders/' + str(time.time())
 	subprocess.call(["cp","MazeRunner",foldername,'-r'])
@@ -16,7 +18,14 @@ def gradeScore(code):
 	time.sleep(0.1)
 	subprocess.call(["g++",foldername+'/main.cpp','-o',foldername+'/program'])
 	time.sleep(0.1)
-	res = subprocess.check_output(foldername+'/program',shell=True)
-	if res.find('1st Move') != -1:
-		res = res[res.find('1st Move') - 7:]
+	res = ""
+	for i in range(1,MAP_NUM+1):
+		nowres = subprocess.check_output(foldername+'/program '+'/home/ubuntu/KAIST_giftedCamp_server/maps/map'+str(i)+'.txt',shell=True)
+		if nowres.find('Clear') != -1:
+			nowres = nowres[res.find('Clear') - 4:]
+		elif nowres.find('Fail') != -1:
+			nowres = nowres[res.find('Fail') - 3:]
+		elif nowres.find('Error') != -1:
+			nowres = nowres[res.find('Error') - 4:]
+		res += nowres + '\n'
 	return res

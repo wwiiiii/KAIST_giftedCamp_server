@@ -4,9 +4,8 @@
 
 int nearMap[3][3];
 
-void loadMapData(int mapNum)
+void loadMapData(char mapname)
 {
-	char mapname[20]; sprintf(mapname, "maps/map%d.txt", mapNum);
 	FILE * f = fopen(mapname, "r");
 	int a, b; fscanf(f, "%d %d", &a, &b); 
 	row = a, col = b; posx = posy = 1; cnt = 0; clear = 0;
@@ -62,7 +61,8 @@ void winGame()
 		printf("Total Move Count : %d\nClear!                 \n", cnt);
 	}
 	clear = 1;
-	//exit(1);
+	printf("Clear : %d\n", cnt);
+	exit(1);
 }
 
 

@@ -11,7 +11,7 @@
 #define BLACK 8*16+8
 #define WHITE 7*16+7
 #define GREEN 2*16+7
-void loadMapData(int);
+void loadMapData(char*);
 void deleteMap();
 void winGame();
 
