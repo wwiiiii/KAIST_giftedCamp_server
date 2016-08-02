@@ -6,7 +6,7 @@ sys.setdefaultencoding('utf-8')
 import subprocess
 
 MAP_NUM = 2
-
+mapPath = '/home/ubuntu/KAIST_giftedCamp_server/maps/map'
 def gradeScore(code):
 	foldername = 'folders/' + str(time.time())
 	subprocess.call(["cp","MazeRunner",foldername,'-r'])
@@ -20,9 +20,8 @@ def gradeScore(code):
 	time.sleep(0.1)
 	res = ""
 	for i in range(1,MAP_NUM+1):
-		nowres = subprocess.check_output(foldername+'/program '+
-								   '/home/ubuntu/KAIST_giftedCamp_server/maps/map'+str(i)+'.txt '+
-								   foldername+'result'+str(i),shell=True)
+		subprocess.call([foldername+'/program',mapPath+str(i)+'.txt',foldername+'/result'+str(i)])
+		nowres = open(foldername+'/result'+str(i)).readlines(); nowres=  str(nowres)
 		if nowres.find('Clear') != -1:
 			nowres = nowres[res.find('Clear'):]
 		elif nowres.find('Fail') != -1:
