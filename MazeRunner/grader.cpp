@@ -7,12 +7,12 @@ int gradeAlgo(char * mapname, char *resname)
 	myFunction();
 	if (getSuccess() == 0) {
 		FILE * fp = fopen(resf, "w");
-		fprintf(fp, "Failed\n");
+		fprintf(fp, "Failed.\n");
 		fclose(fp);
 	}
 	else {
 		FILE * fp = fopen(resf, "w");
-		fprintf(fp, "Error\n");
+		fprintf(fp, "Error.\n");
 		fclose(fp);
 	}
 	exit(0);

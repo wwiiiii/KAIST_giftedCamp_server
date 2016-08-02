@@ -3,14 +3,7 @@
 
 void myFunction()
 {
-	move(RIGHT);
-	LOOP(2) move(DOWN);
-	move(LEFT);
-	LOOP(3) move(DOWN);
-	LOOP(4) move(RIGHT);
-	LOOP(3) move(UP);
-	LOOP(3) move(RIGHT);
-	LOOP(3) move(DOWN);
+	//
 }
 
 /*

@@ -58,7 +58,7 @@ void winGame()
 {
 	clear = 1;
 	FILE * fp = fopen(resf, "w");
-	fprintf(fp,"Clear : %d\n", cnt);
+	fprintf(fp,"Clear with Move Count : %d\n", cnt);
 	fclose(fp);
 	exit(0);
 }
