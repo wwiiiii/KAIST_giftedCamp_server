@@ -23,7 +23,8 @@ def gradeScore(code):
 		subprocess.call([foldername+'/program' , mapPath+str(i)+'.txt' , foldername+'/result'+str(i)])
 		time.sleep(0.05)
 		if os.path.exists(foldername+'/result'+str(i)):
-			nowres = open(foldername+'/result'+str(i)).readlines(); nowres=  str(nowres)
+			nowres = open(foldername+'/result'+str(i)).readlines();
+			print nowres; nowres=  str(nowres)
 			if nowres.find('Clear') != -1:
 				nowres = nowres[res.find('Clear'):]
 			elif nowres.find('Fail') != -1:
