@@ -28,4 +28,5 @@ def gradeScore(code):
 		elif nowres.find('Error') != -1:
 			nowres = nowres[res.find('Error'):]
 		res += nowres + '\n'
+		print nowres
 	return res
