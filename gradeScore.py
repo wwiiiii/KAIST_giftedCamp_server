@@ -20,15 +20,16 @@ def gradeScore(code):
 	time.sleep(0.1)
 	res = ""
 	for i in range(1,MAP_NUM+1):
-		subprocess.call([foldername+'/program' , mapPath+str(i)+'.txt' , foldername+'/result'+str(i)])
+		p = subprocess.Popen([foldername+'/program' , mapPath+str(i)+'.txt' , foldername+'/result'+str(i)])
 		time.sleep(0.05)
+		p.terminate()
 		if os.path.exists(foldername+'/result'+str(i)):
 			nowres = open(foldername+'/result'+str(i), 'r').readlines();
 			print nowres
 			nowres=  str(nowres[0]); print nowres
 			res += str(i)+'th ' + nowres + '\n'
 		else:
-			nowres = str(i)+'th Failed\n'
-			res += str(i)+'th Failed\n'
+			nowres = str(i)+'th TimeOut\n'
+			res += str(i)+'th TimeOut\n'
 		print nowres
 	return res
