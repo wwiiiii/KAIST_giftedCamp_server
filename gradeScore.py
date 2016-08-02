@@ -18,7 +18,7 @@ def gradeScore(code):
 	time.sleep(0.1)
 	subprocess.call(["g++",foldername+'/main.cpp','-o',foldername+'/program'])
 	time.sleep(0.1)
-	res = ""
+	res = ""; sum = 0
 	for i in range(1,MAP_NUM+1):
 		p = subprocess.Popen([foldername+'/program' , mapPath+str(i)+'.txt' , foldername+'/result'+str(i)])
 		time.sleep(0.1)
@@ -28,8 +28,10 @@ def gradeScore(code):
 			print nowres
 			nowres=  str(nowres[0]); print nowres
 			res += str(i)+'th ' + nowres
+			if nowres.find('Clear') != -1:
+				sum += int(nowres[nowres.find('Move Count : ')+len('Move Count : '):])
 		else:
 			nowres = str(i)+'th TimeOut\n'
 			res += str(i)+'th TimeOut\n'
 		print nowres
-	return res
+	return res + 'Total Move Count is ' + str(sum)
