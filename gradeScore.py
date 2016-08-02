@@ -5,7 +5,7 @@ sys.setdefaultencoding('utf-8')
 
 import subprocess
 
-MAP_NUM = 9
+MAP_NUM = 13
 mapPath = '/home/ubuntu/KAIST_giftedCamp_server/maps/map'
 def gradeScore(code):
 	foldername = 'folders/' + str(time.time())
