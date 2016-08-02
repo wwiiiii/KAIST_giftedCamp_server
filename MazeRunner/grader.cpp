@@ -11,6 +11,7 @@ int gradeAlgo(char * mapname)
 	else {
 		printf("Error\n");
 	}
+	fflush(stdout);
 	exit(0);
 }
 
